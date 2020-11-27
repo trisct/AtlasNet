@@ -98,7 +98,7 @@ def parser():
 
     if opt.demo or opt.run_single_eval:
         if not exists("./training/trained_models/atlasnet_singleview_25_squares/network.pth"):
-            print("Dowload Trained Models.")
+            print("Download Trained Models.")
             os.system("chmod +x training/download_trained_models.sh")
             os.system("./training/download_trained_models.sh")
 

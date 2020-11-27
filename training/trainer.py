@@ -23,6 +23,8 @@ class Trainer(TrainerAbstract, TrainerLoss, TrainerIteration, TrainerDataset, Tr
         """
 
         super(Trainer, self).__init__(opt)
+
+        print('HERE: Trainer.__init__ starts.')
         self.dataset_train = None
         self.opt.training_media_path = os.path.join(self.opt.dir_name, "training_media")
         if not opt.demo and not os.path.exists(self.opt.training_media_path):
@@ -37,6 +39,8 @@ class Trainer(TrainerAbstract, TrainerLoss, TrainerIteration, TrainerDataset, Tr
         self.flags.compute_clustering_errors = False
         self.display = EasyDict({"recons": []})
         self.colormap = mesh_processor.ColorMap()
+
+        print('HERE: Trainer.__init__ done.')
 
     def train_loop(self):
         """
